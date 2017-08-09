@@ -171,15 +171,15 @@ otp.modules.planner.PlannerModule =
         this.activated = true;
 
         // set up primary widgets (TODO: move to bike planner module)
-        //this.tipWidget = this.createWidget("otp-tipWidget", "", this);
-        //this.addWidget(this.tipWidget);
-        //this.updateTipStep(1);
+        /*this.tipWidget = this.createWidget("otp-tipWidget", "", this);
+        this.addWidget(this.tipWidget);
+        this.updateTipStep(1);
 
         this.bikestationsWidget = new otp.widgets.BikeStationsWidget('otp-bikestationsWidget', this);
         this.addWidget(this.bikestationsWidget);
 
-        //this.noTripWidget = new otp.widgets.Widget('otp-noTripWidget', this);
-        //this.addWidget(this.noTripWidget);
+        this.noTripWidget = new otp.widgets.Widget('otp-noTripWidget', this);
+        this.addWidget(this.noTripWidget);*/
     },
 
     restore : function() {
