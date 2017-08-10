@@ -122,10 +122,10 @@ otp.config = {
      * Site name / description / branding display options
      */
 
-    siteName            : "My OTP Instance",
-    siteDescription     : "An OpenTripPlanner deployment.",
+    siteName            : "Mapp",
+    siteDescription     : "Hackathon 2k17",
     logoGraphic         : 'images/otp_logo_darkbg_40px.png',
-    // bikeshareName    : "",
+    bikeshareName       : "Hubway",
     //Enable this if you want to show frontend language chooser
     showLanguageChooser : true,
 
@@ -175,7 +175,9 @@ otp.config = {
     geocoders : [
         {
             name: 'OTP built-in geocoder',
-            className: 'otp.core.GeocoderBuiltin'
+            className: 'otp.core.GeocoderBuiltin',
+            url: '/otp-geocoder/geocode',
+            addressParam: 'address'
             // URL and query parameter do not need to be set for built-in geocoder.
         }
     ],
