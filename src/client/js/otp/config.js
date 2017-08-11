@@ -5,7 +5,7 @@ otp.config = {
     //If enabled it shows inspector layers overlays which can be used for Graph
     //debugging
     //Can be also enabled in URL parameters as ?debug_layers=true
-    debug_layers: false,
+    debug_layers: true,
 
     //This is default locale when wanted locale isn't found
     //Locale language is set based on wanted language in url >
@@ -127,9 +127,9 @@ otp.config = {
     logoGraphic         : 'images/otp_logo_darkbg_40px.png',
     bikeshareName       : "Hubway",
     //Enable this if you want to show frontend language chooser
-    showLanguageChooser : true,
+    showLanguageChooser : false,
 
-    showLogo            : true,
+    showLogo            : false,
     showTitle           : true,
     showModuleSelector  : true,
     metric              : false,
