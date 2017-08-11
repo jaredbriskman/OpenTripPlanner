@@ -124,12 +124,12 @@ otp.config = {
 
     siteName            : "Mapp",
     siteDescription     : "Hackathon 2k17",
-    logoGraphic         : 'images/otp_logo_darkbg_40px.png',
+    logoGraphic         : 'images/mapplogobig.png',
     bikeshareName       : "Hubway",
     //Enable this if you want to show frontend language chooser
     showLanguageChooser : false,
 
-    showLogo            : false,
+    showLogo            : true,
     showTitle           : true,
     showModuleSelector  : true,
     metric              : false,
