@@ -1,5 +1,83 @@
 # Changelog
 
+## 1.4 (2019-07-30)
+
+- Remove Open Traffic prototype code (#2698)
+- Improved configuration documentation
+- Update onebusaway-gtfs to latest version from OBA project (#2636)
+- Remove the coupling to OneBusAway GTFS within OTP's internal model by creating new classes replacing the external classes (#2494)
+- Allow OTP to search more service days for transit service (#2592)
+- Allow itineraries in response to be sorted by duration (#2593)
+- Add support for GTFS-flex services: flag stops, deviated-route service, and call-and-ride (#2603)
+- Fix reverse optimization bug (#2653, #2411)
+- increase GTFS-realtime feeds size limit from 64MB to 2G (#2738)
+- Fix XML response serialization (#2685)
+- Refactor InterleavedBidirectionalHeuristic (#2671)
+- Add "Accept" headers to GTFS-RT HTTP requests (#2796)
+- Fix minor test failure against BANO geocoder (#2798)
+- Fix frequency bounds checking (#2540)
+- Fix JTS coordinate order for Polygons/Polylines (#2784)
+- Add JAXB API to allow compilation under Java 11
+- Remove dependency on Conveyal jackson2-geojson
+- Changed calculation of slope costs (#2579)
+- Replace Java built in serialization with faster Kryo (#2681)
+- Support OSM highway=razed tag (#2660)
+- Memory leak fix (#2655)
+- Add bicimad bike rental updater (#2503)
+- Add Smoove citybikes updater (#2515)
+- Switched to single license file, removing all OTP and OBA file license headers
+
+## 1.3 (2018-08-03)
+
+- Fix stop linking to only one edge of platform (#2472)
+- Log and allow changing number of HTTP handler threads
+- Update Dutch base fare from 89 to 90 cents (#2608)
+- Add Dutch fare service (#2571)
+- Revise unit tests to use less memory
+- Run all graph updater setup methods sequentially (#2545)
+- Allow vehicle rental systems with cars (stopgap parameter on bike rental)
+- Bump R5 version to get newer gtfs-lib and FST serialization
+- Move stopClusterMode parameter from routing config to build config (#2558)
+- Update encrypted Maven artifact signing key (it expired)
+- Clean up logging
+- Remove/update deprecated HTTPClient, add missing SSL ciphers (#2451)
+- Make maxTransfer options configurable through scripting API (#2507)
+- Fix scripts when entity IDs contain colons (#2474)
+- Add HTML report for stops more than 20m from linked road (#2460)
+- Update fares in NycFareServiceImpl (#2466)
+- Compact legs NPE fix (#2449) (#2490)
+- Docs: elevation data configuration, USGS DEM files
+- Docs: Update list of deployments
+- Docs: API, list of deployments, usage stats and tutorials
+- Docs: Update leadership committee listing following Boston Summit
+- Docs: Update OTP logo (Thanks Kate Chanba!)
+
+## 1.2 (2017-09-18)
+
+- Add support for consuming GBFS bike-rental availability feeds. #2458
+- Add GBFS configuration example
+- Add flag for including requested start/end time in maxHours in planner API. #2457
+- Add maxTransferDistance graph builder parameter
+- Add option for filtering non-pickup stops in TransitIndex stop times functions. #2377
+- Support foot/bicycle=discouraged OSM tag. #2415
+- Improve linking of transit platforms to connecting access ways. #2422 / #2428
+- Fix bug when building graph with parent station transfers. #2404 / #2410
+- Fix bugs in park and ride search. #2424
+- Support different stop ID formats in field trip module
+- Update URL in BANO geocoding module. #2438 / #2439
+- Add more debug information related to trips matching using GTFS-RT feed. #2432
+- Update default PATH_NOT_FOUND message to new wording developed w/ TriMet. #2355
+- Update Travis build configuration to not attempt GPG operations. #2441
+- Fix javadoc URL in scripting documentation. #2437
+- Automatically link to GitHub issues in Changelog. #2426
+- Expose FeedInfo objects in the Index API #2456
+- Changes to Puget Sound region fare calculation #2484
+- Fix coordinatates when clustering by parent station #2447
+- Allow setting OSM Way Properties from build-config.json #2389
+- Optionally compact ("reverse-optimize") results with complete reverse search #2449
+- Add updater for urbaninfrastructure city bikes #2448
+- Miscellaneous documentation updates
+
 ## 1.1 (2017-03-16)
 
 - Deploy to Sonatype OSSRH and Maven Central
@@ -54,7 +132,7 @@
 - Ignore exceptions caused by errors in OSM linear rings.
 - Updated to version 2.18 of Jersey to fix hanging threads in Grizzly.
 - Removed confusing "Busish" and "Trainish" pseudo-modes.
-- FareService for Seattle: allow specifying fares in GTFS instead of hard-coding them in Java. Senior/youth fare prices are given in an extra column in fare attributes. Per-trip fares are taken into consideration when calculating fares in this region. 
+- FareService for Seattle: allow specifying fares in GTFS instead of hard-coding them in Java. Senior/youth fare prices are given in an extra column in fare attributes. Per-trip fares are taken into consideration when calculating fares in this region.
 - Update new linker to link to transitStops if no streets are found.
 - Show the name supplied in the request for the origin/destination points in the response.
 - Throw a trivialPath exception if start/end point are on the same edge.
@@ -225,7 +303,7 @@
 - full internationalization of the map-based web client
 - basic Lucene-based built-in geocoder
 
-## 0.11.0 (2014-03-24) 
+## 0.11.0 (2014-03-24)
 - Built-in HTTP server layer, making it possible to distribute OTP as a standalone JAR
 - "Long-distance" mode for large graphs, including bidirectional goal direction heuristic.
 - Simplified Maven project structure with less submodules
@@ -248,7 +326,7 @@ This release was made to consolidate all the development that had occurred with 
 - more lenient parsing of times
 - new directions icon set with SVG sources (thanks Laurent G)
 
-## 0.5.4 (2012-04-06) 
+## 0.5.4 (2012-04-06)
 - catch 0 divisors in NED builder, preventing NaN propagation to edge lengths
 - avoid repeated insertion of edges into edge lists, which are now threadsafe edge sets
 - identity equality for edges
@@ -286,7 +364,7 @@ This release was made to consolidate all the development that had occurred with 
 - more transit index features
 - default agencyIDs now determined on a per-feed basis
 - fixed fare overflow problem
-- fixed bug in loop road turn conversion 
+- fixed bug in loop road turn conversion
 - additional graphbuilder warnings and annotations
 - fixed a batch of bugs found by fixbugs  
 
@@ -294,7 +372,7 @@ This release was made to consolidate all the development that had occurred with 
 - stop codes, zones, and agency names in planner responses
 - encapsulation of edge list modifications
 - expanded edge and vertex type hierarchy
-- use mapquest OSM server by default 
+- use mapquest OSM server by default
 - Turkish locale (thanks Hasan Tayyar Beşik)
 - German and Italian locales (thanks Gerardo Carrieri)
 - bookmarkable trip URLs (thanks Matt Conway)
