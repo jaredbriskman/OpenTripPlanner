@@ -23,7 +23,7 @@ public class GbfsBikeRentalDataSource implements BikeRentalDataSource, JsonConfi
 
     private GbfsStationDataSource stationSource;
     private GbfsStationStatusDataSource stationStatusSource;
-    //private GbfsFloatingBikeDataSource floatingBikeSource;
+    private GbfsFloatingBikeDataSource floatingBikeSource;
 
     private String baseUrl;
     private String apiKey;
@@ -31,7 +31,7 @@ public class GbfsBikeRentalDataSource implements BikeRentalDataSource, JsonConfi
     public GbfsBikeRentalDataSource () {
         stationSource = new GbfsStationDataSource();
         stationStatusSource = new GbfsStationStatusDataSource();
-        //floatingBikeSource = new GbfsFloatingBikeDataSource();
+        floatingBikeSource = new GbfsFloatingBikeDataSource();
     }
 
     //private boolean read
@@ -42,12 +42,12 @@ public class GbfsBikeRentalDataSource implements BikeRentalDataSource, JsonConfi
         if (!baseUrl.endsWith("/")) baseUrl += "/";
         stationSource.setUrl(baseUrl + "station_information.json");
         stationStatusSource.setUrl(baseUrl + "station_status.json");
-        //floatingBikeSource.setUrl(baseUrl + "free_bike_status.json");
+        floatingBikeSource.setUrl(baseUrl + "free_bike_status.json");
     }
 
     @Override
     public boolean update() {
-        return stationSource.update() && stationStatusSource.update(); //&& floatingBikeSource.update();
+        return stationSource.update() && stationStatusSource.update() && floatingBikeSource.update();
     }
 
     @Override
@@ -66,7 +66,7 @@ public class GbfsBikeRentalDataSource implements BikeRentalDataSource, JsonConfi
         }
 
         List<BikeRentalStation> stations = new LinkedList<>(stationSource.getStations());
-        //stations.addAll(floatingBikeSource.getStations());
+        stations.addAll(floatingBikeSource.getStations());
         return stations;
     }
 
@@ -120,7 +120,7 @@ public class GbfsBikeRentalDataSource implements BikeRentalDataSource, JsonConfi
         }
     }
 
-    /*class GbfsFloatingBikeDataSource extends GenericJsonBikeRentalDataSource {
+    class GbfsFloatingBikeDataSource extends GenericJsonBikeRentalDataSource {
 
         public GbfsFloatingBikeDataSource () {
             super("data/bikes");
@@ -142,5 +142,4 @@ public class GbfsBikeRentalDataSource implements BikeRentalDataSource, JsonConfi
             return brstation;
         }
     }
-    */
 }
