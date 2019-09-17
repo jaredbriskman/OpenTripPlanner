@@ -171,21 +171,21 @@ body {
   z-index: 100;
   color: #fff;
 
-  background-color: #000000;
+  background-color: #444;
 
-#  Background-image: linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
-#  background-image: -o-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
-#  background-image: -moz-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
-#  background-image: -webkit-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
-#  background-image: -ms-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
+  background-image: linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(68,68,68) 0%, rgb(102,102,102) 100%);
 
-#  background-image: -webkit-gradient(
-#  	linear,
-#  	left bottom,
-#  	left top,
-#  	color-stop(0, rgb(68,68,68)),
-#  	color-stop(1, rgb(102,102,102))
-#  );
+  background-image: -webkit-gradient(
+  	linear,
+  	left bottom,
+  	left top,
+  	color-stop(0, rgb(68,68,68)),
+  	color-stop(1, rgb(102,102,102))
+  );
 }
 
 @media only screen and (min-width: 768px) {

@@ -5,7 +5,7 @@ otp.config = {
     //If enabled it shows inspector layers overlays which can be used for Graph
     //debugging
     //Can be also enabled in URL parameters as ?debug_layers=true
-    debug_layers: true,
+    debug_layers: false,
 
     //This is default locale when wanted locale isn't found
     //Locale language is set based on wanted language in url >
@@ -122,12 +122,12 @@ otp.config = {
      * Site name / description / branding display options
      */
 
-    siteName            : "Mapp",
-    siteDescription     : "Hackathon 2k17",
-    logoGraphic         : 'images/mapplogobig.png',
-    bikeshareName       : "Hubway",
+    siteName            : "My OTP Instance",
+    siteDescription     : "An OpenTripPlanner deployment.",
+    logoGraphic         : 'images/otp_logo_darkbg_40px.png',
+    // bikeshareName    : "",
     //Enable this if you want to show frontend language chooser
-    showLanguageChooser : false,
+    showLanguageChooser : true,
 
     showLogo            : true,
     showTitle           : true,
@@ -175,9 +175,7 @@ otp.config = {
     geocoders : [
         {
             name: 'OTP built-in geocoder',
-            className: 'otp.core.GeocoderBuiltin',
-            url: '/otp-geocoder/geocode',
-            addressParam: 'address'
+            className: 'otp.core.GeocoderBuiltin'
             // URL and query parameter do not need to be set for built-in geocoder.
         }
     ],
